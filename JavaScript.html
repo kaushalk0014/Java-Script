@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript</h1>
+ 
+
+<script>
+ 
+ console.log("JavaScript");
+ 
+ printData();
+ function printData(){
+	console.log("Print data");
+ }
+ 
+ printFunction= () =>{
+	console.log("Print Function");
+ }
+ 
+ printFunction();
+ 
+ var data = 100;
+ 
+ console.log( `Data : ${data}`);
+ 
+ if(true){
+	
+	var a = 10;
+	let b = 20;
+	const c = 30;
+	
+	console.log("Block leavel var : "+a);
+	console.log("Block leavel let : "+b);
+	console.log("Block leavel const : "+c);
+	 
+ }
+	console.log("OutSide Block leavel var : "+a);
+	//console.log("OutSide Block leavel let: "+b);  // "let" we can't use out side block because out side vi not there
+	//console.log("OutSide Block leavel const : "+c);  // "const" we can't use out side block because out side vi not there
+	
+	
+	// JavaScript Data type
+		//1. Primitive data types are immutable:  we can't change it 
+		//2. Non Primitive data types are mutable:  we can't change it 
+	
+	
+	//Primitive Data type
+		//1.	Number
+		//2.	String
+		//3.	Boolean
+		//4.	Undefined
+		//5.	null
+		//6.	Symbbol
+		//7.	BigInt
+		
+		// Number represents both integer and floating point
+		let age =20;
+		let price =88.50;
+		let infinite = Infinity;
+		
+		console.log(" Age : "+ age);
+		console.log("Price : "+price);
+		console.log("Infinity : "+infinite);
+		
+		
+		const symb1 = Symbol("name");
+		const symb2 = Symbol("name");
+
+		console.log(symb1 === symb2); // false (Symbols are always unique)
+	
+		// BigInt values are created by appending n to the end of an integer
+		let bigNumber= 7458455585695425823645874584584586578n;
+		console.log("Big Int : "+ bigNumber);
+ 
+ 
+ //Non Primitive Data type
+	//1. 	object
+	//2.	function
+	//3.	array
+	
+	const objectData ={name: "kaushal", age: "20"};
+	
+	console.log(objectData);
+	
+	const arr =["Java" , "String", "CSS"];
+	console.log(arr);
+ 
+</script>
+
+</body>
+</html>
+
+

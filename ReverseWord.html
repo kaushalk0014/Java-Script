@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Reverse words </h1>
+ 
+ 
+ <p id="result"></p>
+
+<script>
+
+	const input="Welcome"
+	// output =emocleW
+	
+	const reverseResult = input.split("").reverse().join("");
+	console.log(reverseResult);
+	
+	console.log("---------------------------------------------------------");
+
+  const inputString = "Welcome to the Vanilla Programming.";
+ //const outputString = 'emocleW ot eht allinaV gnimmargorP.’;
+ 
+	 const firstSplit = inputString.split(".");
+	  
+	const  result = firstSplit[0].split(" ")
+					.map(word=> word.split("").reverse().join(""))
+					.join(" ");
+	console.log(result+".");
+	document.getElementById("result").innerText =result+".";//+firstSplit[1];
+	
+	
+</script>
+
+	
+</body>
+</html>
+
+

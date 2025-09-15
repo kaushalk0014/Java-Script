@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Closure Example</h1>
+ 
+
+<script>
+	
+	function outer() {
+	  let count = 0; // variable in outer function
+
+	  function inner() {
+		count++;
+		console.log(count);
+	  }
+
+	  return inner;
+	}
+
+	const counter = outer();
+	counter(); // 1
+	counter(); // 2
+	counter(); // 3
+	
+</script>
+
+	
+</body>
+</html>
+
+

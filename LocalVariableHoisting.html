@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Hoisting Variable</h1>
+ 
+
+<script>
+	
+	//Hoisting
+	console.log(`------------ Hoisting ------------`);
+	
+	console.log(`Name : ${name}`);//✅undefined
+	var name = "kaushal";
+	
+	
+	//console.log(`City : ${city}`);//❌ ReferenceError
+	//let city = "Patna";
+	
+	//console.log(`Country : ${country}`);//❌ ReferenceError
+	//const country = "India";
+	
+	
+	//-------------------------------------------
+	
+	//🔹Re-declaration
+	
+	console.log(`------------ Re-declaration ------------`);
+	var a = 20;
+	console.log(`1. var = ${a}`);
+	var a = 30;
+	console.log(`2. var = ${a}`);
+	
+	let l = 50;
+	console.log(`1. let = ${l}`);
+	//let l =60;  SyntaxError: Identifier 'l' has already been declared
+	//console.log(`2. let = ${l}`);
+	
+	
+	const c = 80;
+	console.log(`1. const = ${l}`);
+	//const c =90;   SyntaxError: Identifier 'l' has already been declared
+	//console.log(`2. const = ${l}`);
+	
+	
+	// let overwrite below
+	 console.log(`------------ overwrite ------------`);
+	
+	//🔹 This is the tricky part. Even though let l = 50 was declared earlier, var l = 100 does //not overwrite it in the same block.
+
+	//var l = 100;
+	//console.log(`Reassigne Identifier = ${l}`);
+	
+	
+	// const overwrite below
+	
+	//🔹 This is the tricky part. Even though const c = 80 was declared earlier, var c = 99 does //not overwrite it in the same block.
+	
+	//var c = 99;
+	//console.log(`Reassigne Identifier = ${c}`);
+	
+		
+	 //🔹 Re-assignment 
+	 console.log(`------------ Re-assignment ------------`);
+	 
+	 var email = "kaushal@gmail.com";
+	 email="kaushal123456@gmail.com";
+	 
+	 console.log(`Email :${email}`);
+	 
+	 let phone = "9931000099";
+	 phone = "9999000077";
+	 console.log(`Phone :${phone}`);
+	 
+	 //const pinCode = 810000;
+	// pinCode = 990000;
+	 //console.log(`Pin code : ${pinCode}`);//Uncaught TypeError: Assignment to constant
+	 //Cannot be reassigned (but objects/arrays inside can be mutated).
+ 
+	{
+	  //const c = 80;
+	 //const c = 90; //Uncaught SyntaxError: Identifier 'c' has already been declared
+	}
+
+	{
+	  const t = 80;
+	  console.log(" t 1 : "+t);
+	}
+	
+	{
+	  const t = 85;
+	  console.log(" t 2 : "+t);
+	 //It is working because of both are different block
+	}
+	
+	//🔹Difference Between == and ===
+	console.log("Difference Between == and ===");
+	
+	/*
+	(Equality Operator, "loose equality")
+	Compares values only.
+	Performs type coercion (tries to convert operands to the same type before comparison).
+	Can give some surprising results.
+	✅ Example:
+	5 == "5"   // true (string "5" is coerced to number 5)
+	0 == false // true (false is coerced to 0)
+	null == undefined // true
+	
+	=== (Strict Equality Operator)
+	Compares both value and type.
+	No type coercion is done.
+	Safer and more predictable.
+	✅ Example:
+	5 === "5"   // false (number vs string)
+	0 === false // false (number vs boolean)
+	null === undefined // false
+	5 === 5     // true
+	🔹 Rule of Thumb
+	Use === (strict equality) almost always → it avoids unexpected results.
+	Use == only when you intentionally want type coercion.
+**/
+	
+	console.log(`5 == "5" : ${5 == "5"}`);//true  (string "5" is coerced to number 5)
+	console.log(`0==false : ${0==false}`);// true (number vs boolean)
+	console.log(`null == undefined : ${null==undefined}`);//true (null vs undefined)
+	
+	
+	console.log("===");
+	
+	console.log(`5 === "5" : ${5 === "5"}`);//false  (string "5" is coerced to number 5)
+	console.log(`0===false : ${0===false}`);// false (number vs boolean)
+	console.log(`null === undefined : ${null===undefined}`);//false (null vs undefined)
+	console.log(`5 === 5 : ${5 === 5}`);//true  (number 5 vs number 5)
+	console.log(`"Script" === "Script" : ${"Script" === "Script"}`);//true  (string 5 vs string 5)
+	
+
+</script>
+
+	
+</body>
+</html>
+
+ 

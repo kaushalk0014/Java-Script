@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Local Variable</h1>
+ 
+
+<script>
+	
+	 function test(){
+	 
+	 
+		var b = 30;
+		let a = 20;		
+		const c = 40;
+		
+		console.log(`a = ${a}`);
+		console.log(`b = ${b}`);
+		console.log(`c = ${c}`);
+		
+		if(true){
+			console.log("--in side block----");
+			console.log(`a = ${a}`);
+			console.log(`b = ${b}`);
+			console.log(`c = ${c}`);
+			
+			var d = 30;
+			let e = 20;			
+			const f = 40;
+		}
+		
+		console.log("--out side block----");
+		
+		console.log(`d = ${d}`);
+		
+		console.log("Uncaught ReferenceError");
+		//console.log(`e = ${e}`);//ReferenceError
+		//console.log(`f = ${f}`);//ReferenceError
+		
+	 }
+	test();
+</script>
+
+	
+</body>
+</html>
+
+ 

@@ -1,0 +1,53 @@
+Basic Level
+
+	What are the differences between var, let, and const?
+
+	What is hoisting in JavaScript?
+
+	Explain the difference between == and ===.
+
+	What are closures in JavaScript? Give an example.
+
+	What is the difference between null and undefined?
+
+	What are template literals and how are they useful?
+
+	Explain event bubbling and event capturing.
+
+	What is the difference between synchronous and asynchronous code in JS?
+
+🔹 Intermediate Level
+
+	What are promises, and how do they solve callback hell?
+
+	Explain async/await with an example.
+
+	What is the difference between call(), apply(), and bind()?
+
+	Explain the concept of prototypal inheritance in JavaScript.
+
+	What is the event loop and how does it work?
+
+	Explain what this keyword refers to in different contexts.
+
+	What is the difference between deep copy and shallow copy in JS?
+
+	How does JavaScript handle memory management (garbage collection)?
+
+🔹 Advanced Level
+
+	What are generators in JavaScript? How are they different from regular functions?
+
+	What is the difference between setTimeout, setInterval, and requestAnimationFrame?
+
+	How do you handle debouncing and throttling in JavaScript?
+
+	What are Web Workers and when would you use them?
+
+	Explain the difference between microtasks and macrotasks in the event loop.
+
+	What are ES6 modules, and how do they differ from CommonJS?
+
+	Explain the concept of currying in JavaScript.
+
+	What security issues are common in JavaScript (e.g., XSS) and how do you prevent them?

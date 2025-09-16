@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Difference between null and undefined</h1>
+ 
+ <h2>
+	🔹 undefined
+		Assigned by JavaScript automatically when:
+		A variable is declared but not initialized.
+		A function doesn’t return anything.
+		A property doesn’t exist in an object.
+		It means: “not assigned / not available yet.
+ </h2>
+
+<script>
+	
+	 let a;
+	 
+	 console.log(a);//undefined
+	 
+	 function app(){
+	 }
+	 
+	 console.log(app());//undefined
+	 
+	 const employee = {};
+	 
+	 console.log(employee);//empty object
+	 
+	 console.log(employee.name);//undefined
+	 
+	
+	const b = null;
+	
+	console.log(b);
+	
+	const customer = {
+		"name":"kaushal",
+		"age":25,
+		"phone":null
+	};
+	
+	console.log(customer.phone);
+</script>
+
+	
+</body>
+</html>
+
+ 

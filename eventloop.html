@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Closures</h1>
+ 
+ <h2>
+	🔹 Why Event Loop Exists
+		JavaScript is single-threaded (it can only do one thing at a time).
+		But we still need to handle things like:
+		User interactions (clicks, inputs)
+		Timers (setTimeout, setInterval)
+		Network requests (fetch/axios)
+		Promises / async–await
+		👉 The event loop is what lets JavaScript handle asynchronous tasks without blocking the main thread.
+		
+		🔹 Summary
+
+		JS runs synchronously by default.
+		Event loop allows async tasks by managing the call stack and task queues.
+		Microtasks (Promises) run before macrotasks (setTimeout) in each tick.
+ </h2>
+
+<script>
+	
+	console.log("Start");
+
+	setTimeout(() => {
+	  console.log("Timeout");
+	}, 0);
+
+	Promise.resolve().then(() => {
+	  console.log("Promise");
+	});
+
+	console.log("End");
+
+</script>
+
+	
+</body>
+</html>
+
+ 

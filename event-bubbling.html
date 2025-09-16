@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Event bubbling</h1>
+ 
+ <h2>
+	When an event (like a click) happens on a DOM element, it doesn’t just affect that element — it goes through three phases:
+	1.	Capturing phase (Event Capturing / Trickling)
+		Event travels from the root (document) down to the target element.
+	2.	Target phase
+		The event reaches the actual element that was clicked.
+	3.	Bubbling phase (Event Bubbling)
+		Event travels back up from the target to the root.
+	
+	🔹 Event Bubbling
+		Default behavior in modern browsers.
+		Event is handled from the innermost element → outward (child → parent → document).
+ </h2>
+
+<script>
+	  
+		//document.getElementById("parent").addEventListener("click", () => {
+		//  console.log("Parent clicked");
+		//});
+
+		//document.getElementById("child").addEventListener("click", () => {
+		//  console.log("Child clicked");
+		//});
+		
+		document.addEventListener("DOMContentLoaded", () => {
+		  const parent = document.getElementById("parent");
+		  const child = document.getElementById("child");
+
+		  parent.addEventListener("click", () => console.log("Parent clicked"));
+		  child.addEventListener("click", () => console.log("Child clicked"));
+		});
+
+</script>
+
+	<br><br>
+		<div id="parent">
+		  <button id="child">Click Me</button>
+		</div> 
+</body>
+</html>
+
+ 

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Template literals</h1>
+ 
+ <h2>
+	Template literals are string literals that allow you to:
+	Embed variables and expressions inside strings.
+	Write multi-line strings easily.
+	Use tagged templates for advanced string processing.
+	👉 They are written with backticks (``) instead of quotes (' ' or " ").
+ </h2>
+
+<script>
+	 //🔹 Features & Examples
+		console.log(`String Interpolation`);
+		
+		const name = "kaushal";
+		const age = 25;
+		
+		console.log(`My name is ${name} and I am ${age} years old`);
+		
+		console.log(`Multi-line Strings`);
+		
+		const message = `This is line 1
+		This is line 2
+		This is line 3`;
+		
+		console.log(message);
+		
+		console.log(`Expression Evaluation`);
+
+		//we can put any valid JS expression inside ${}.
+		
+		console.log(`3+5 = ${3+5}`);
+		
+		console.log(`Function Calls Inside`);
+		
+		function app(){
+			return "Hello";
+		}
+		
+		console.log(`${app()}`);
+		
+		console.log(`Tagged Templates (Advanced)`);
+		
+		function funStr(strings, ...values){
+			return strings[0] + values.map(v => v.toUpperCase()).join(" ");
+		}
+		
+		const result = funStr`hello ${"kaushal"} you are ${"awesome"}`;
+		console.log(result);
+		
+</script>
+
+	
+</body>
+</html>
+
+ 

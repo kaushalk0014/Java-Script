@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Closures</h1>
+ 
+ <h2>
+	🔹 What is a Closure?
+
+	A closure is created when a function "remembers" variables from the scope in which it was defined, even after that outer scope has finished executing.
+
+	👉 In simple terms:
+	A closure gives an inner function access to variables of its outer function, even after the outer function has returned.
+ </h2>
+
+<script>
+	
+	function outer(){
+	 
+		let a = 10;
+		
+		console.log(`Outer a = ${a}`);
+		function inner(){
+			a= a+5;
+			
+			console.log(`Inner a = ${a}`);
+		}
+		
+		return inner;
+		
+	}
+
+	const data = outer();
+	
+		data();
+		data();
+
+</script>
+
+	
+</body>
+</html>
+
+ 

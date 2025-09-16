@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Promise Example</h1>
+ 
+ <h2>
+🔹 What is a Promise?
+	A Promise is an object in JavaScript that represents the result of an asynchronous operation.
+	It may complete now, later, or never.
+	Promises give a cleaner way to handle async work than callbacks.
+
+🔹 Promise States
+	Pending → initial state (still working).
+	Fulfilled → operation completed successfully → returns a value.
+	Rejected → operation failed → returns a reason (error).
+	Once fulfilled/rejected, the state is settled (can’t change again).
+ </h2>
+
+<script>
+	
+	const myPromise = new Promise((resolve, reject) => {
+	  setTimeout(() => {
+		resolve("Success!");
+		// reject("❌ Error occurred!");
+	  }, 2000);
+	});
+
+	myPromise
+	  .then(result => console.log(result)) // handles resolve
+	  .catch(error => console.error(error)) // handles reject
+	  .finally(() => console.log("Done!"));
+		
+</script>
+</body>
+</html>
+
+ 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Async/Await example</h1>
+ 
+ <h2>
+🔹 What is async/await?
+	async/await is syntactic sugar built on top of Promises.
+	It makes asynchronous code look and behave like synchronous code, improving readability.
+	async keyword → makes a function return a Promise.
+	await keyword → pauses the execution until the Promise is resolved or rejected.
+ </h2>
+
+<script>
+	 
+	 function fetchDataError(){
+		return new Promise((resolve, reject)=>{
+			setTimeout(()=>{
+				reject("Failed to fetch data!");
+			},2000);
+		});
+	 }
+	 
+	 async function getData(){
+		try{
+			console.log("fetching data...");
+			const result = await fetchDataError(); 
+			console.log(result);
+		}catch(error){
+			console.log(error);
+		}		
+		console.log("Done");
+	 }
+	 
+	 getData();// calling function
+		
+</script>
+</body>
+</html>
+
+ 

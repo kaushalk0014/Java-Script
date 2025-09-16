@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Closures</h1>
+ 
+ <h2>
+	🔹 What is a Closure?
+
+	A closure is created when a function "remembers" variables from the scope in which it was defined, even after that outer scope has finished executing.
+
+	👉 In simple terms:
+	A closure gives an inner function access to variables of its outer function, even after the outer function has returned.
+	
+	🔹 Why Closures Are Useful
+
+	Data privacy (encapsulation)
+
+	Maintaining state without global variables
+
+	Callbacks & async code (e.g., event listeners, setTimeout)
+ </h2>
+
+<script>
+	
+	 function createCounter(){
+		let a =1;
+		
+		return function(){
+			  a = a+1;
+			  return a;
+		} 		 
+	 }
+
+	const counter = createCounter();
+	
+		console.log(counter());
+		console.log(counter());
+		console.log(counter());
+
+</script>
+
+	
+</body>
+</html>
+
+ 

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Async/Await example</h1>
+ 
+ <h2>
+🔹 In JavaScript, call(), apply(), and bind() are methods available on functions that let you 
+	control what this refers to when the function runs.
+ </h2>
+
+<script>
+	 
+	 function greet(greeting, punctuation){
+		console.log(`${greeting}, ${this.name} ${punctuation}`);
+	 }
+	 
+	 const person = {"name":"kaushal"};
+	 
+	 greet.call(person, "Hello", "!");
+		
+</script>
+</body>
+</html>
+
+ 

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Async/Await example</h1>
+ 
+ <h2>
+ 
+	🔹 What is Prototypal Inheritance?
+		In JavaScript, objects can inherit properties and methods from another object using the prototype chain.<br>
+		
+		👉 Every object in JavaScript has a hidden property called [[Prototype]] (accessible via __proto__).<br>
+		
+		👉 When you try to access a property on an object:<br>
+			If it exists on the object itself → it is used.<br>
+			If not → JavaScript looks for it in the object’s prototype (__proto__).<br>
+			This lookup continues up the prototype chain until null.<br>
+ </h2>
+
+<script>
+
+	console.log("Example 1");
+	  const parent = {
+		greet :function(){
+			console.log("Hello from parent");
+		}
+	  };
+	  
+	  const child = Object.create(parent);
+	  child.name = "Kaushal";
+	  
+	  child.greet();
+	  console.log(child.name);
+	  
+	  
+	  console.log("========== Example 2 ===============");
+	  
+	  function Person(name){
+		this.name = name
+	  }
+	  
+	  Person.prototype.sayHi = function (){
+		console.log(`Hi, I am ${this.name}`);
+	  }
+	  
+	  const person1 = new Person("Pankaj");
+	  const person2 = new Person("Rakesh");
+	  
+	  person1.sayHi();
+	  person2.sayHi();
+	  
+	  console.log("🔹 Example 3 – ES6 class (syntactic sugar)");
+	  
+	  class Animal{
+		speak(){
+			console.log("I make a sound");
+		}
+	  }
+	  
+	  class Dog extends Animal{
+		speak(){
+			console.log("Woof");
+		}
+	  }
+	  
+	  const d = new Dog();
+	  d.speak();
+	  
+</script>
+</body>
+</html>
+
+ 

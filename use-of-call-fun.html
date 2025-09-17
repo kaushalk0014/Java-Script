@@ -6,18 +6,53 @@
  <h2>
 🔹 In JavaScript, call(), apply(), and bind() are methods available on functions that let you 
 	control what this refers to when the function runs.
+	<br><br>
+	1. call()
+		Invokes the function immediately.
+		Lets you pass this and arguments individually.
+		<br><br>
+	2. apply()
+		Similar to call(), but arguments are passed as an array.
+		Also invokes the function immediately.
+		<br><br>
+	3. bind()
+		Does not invoke the function immediately.
+		Instead, it returns a new function with this permanently bound.
  </h2>
 
 <script>
 	 
 	 function greet(greeting, punctuation){
-		console.log(`${greeting}, ${this.name} ${punctuation}`);
+		
+		console.log(greeting);
+		console.log(punctuation);
+		console.log(`${greeting}, ${this.name} ${this.age} ${punctuation}`);
 	 }
 	 
-	 const person = {"name":"kaushal"};
+	 const person = {"name":"kaushal","age":25};
 	 
 	 greet.call(person, "Hello", "!");
-		
+	 
+	 console.log("===========Example of apply()==================");
+	 function applyExample(param1, param2){
+		console.log(param1);
+		console.log(param2);
+		console.log(`${param1}, ${this.name} ${this.age} ${param2}`);
+	 }
+	 
+	 applyExample.apply(person,["Hi", "!!!"]);
+	 
+	console.log("=============Example of bind()================");
+	
+	function bindExample(param1, param2){
+		console.log(param1);
+		console.log(param2);
+		console.log(`${param1}, ${this.name} ${this.age} ${param2}`);
+	 }
+	
+	const boundGreet = greet.bind(person, "Hello");
+	
+	boundGreet("!");
 </script>
 </body>
 </html>

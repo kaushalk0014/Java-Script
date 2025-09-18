@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Memory Management</title>
+  <style>
+   body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+      padding: 40px;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    table {
+      width: 100%;
+      max-width: 800px;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    th, td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #3498db;
+      color: white;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    caption {
+      caption-side: top;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<h1>🔹Memory Management</h1>
+
+ <div class="section">
+   🔹 Memory Management in JavaScript<br>
+		JavaScript manages memory automatically (no manual malloc/free like in C/C++).
+		The engine allocates memory when objects are created and frees it when they are no longer reachable.
+		This freeing is done via Garbage Collection (GC).
+  </div>
+  <div class="section">
+    <h2>🔹 2. Reachability</h2>
+    <p>The garbage collector (GC) checks whether a value is still <span class="highlight">reachable</span>—meaning it can be accessed through references.</p>
+    <ul>
+      <li>If reachable → it stays in memory.</li>
+      <li>If unreachable → it’s marked for garbage collection.</li>
+    </ul>
+    <p><span class="highlight">Root references</span> include:</p>
+    <ul>
+      <li>Global variables</li>
+      <li>Local variables in functions (on the stack)</li>
+      <li>Objects referenced from those variables</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>🔹 3. Garbage Collection Algorithm</h2>
+    <p>The most common algorithm used is <span class="highlight">Mark-and-Sweep</span>.</p>
+    <ul>
+      <li><strong>Mark:</strong> Start from root references and mark all reachable objects.</li>
+      <li><strong>Sweep:</strong> Remove (free) all unmarked objects from memory.</li>
+    </ul>
+  </div>
+  <div class="cheat-sheet">
+    <h2>🔹 Interview Cheat Sheet: JavaScript Garbage Collection</h2>
+    <ul>
+      <li>JavaScript has automatic garbage collection → developers don’t manually free memory.</li>
+      <li>Uses <strong>reachability</strong> → if an object can’t be reached from root references, it gets collected.</li>
+      <li>Common GC algorithm: <strong>Mark-and-Sweep</strong>.</li>
+      <li>Watch out for memory leaks from:
+        <ul>
+          <li>Global variables</li>
+          <li>Event listeners</li>
+          <li>Closures</li>
+          <li>Timers (setTimeout, setInterval)</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+<script>
+	
+
+		let num = 42;                     // primitive stored on stack
+		let obj = { name: "Kaushal" };      // object stored in heap
+		
+		
+		function test() {
+		  let user = { name: "Pankaj" };
+		  return user;
+		}
+
+		let person = test();
+		// At this point, object {name: "Pankaj"} is reachable via `person`
+		person = null;
+		// Now {name: "Pankaj"} is unreachable → GC will clean it
+
+</script>
+</body>
+</html>
+
+ 

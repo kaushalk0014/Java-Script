@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Use of Deep Copy</title>
+  <style>
+   body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+      padding: 40px;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    table {
+      width: 100%;
+      max-width: 800px;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    th, td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #3498db;
+      color: white;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    caption {
+      caption-side: top;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<h1>🔹Use Shallow Copy</h1>
+
+ <div class="section">
+   🔹 Shallow Copy
+		A shallow copy copies only the first level of an object/array.
+		Nested objects/arrays are still referenced, not cloned.
+		Changing a nested object in the copy will also affect the original.
+		<br>
+		✅ Example:
+  </div>
+ 
+  <table>
+    <caption>Shallow Copy vs Deep Copy</caption>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Shallow Copy</th>
+        <th>Deep Copy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Copy level</td>
+        <td>Only first level</td>
+        <td>All nested levels</td>
+      </tr>
+      <tr>
+        <td>Nested objects</td>
+        <td>Shared references (linked)</td>
+        <td>Fully cloned (independent)</td>
+      </tr>
+      <tr>
+        <td>Performance</td>
+        <td>Faster</td>
+        <td>Slower (more processing)</td>
+      </tr>
+      <tr>
+        <td>Example methods</td>
+        <td>Spread (`{...obj}`), `Object.assign()`</td>
+        <td>`JSON.parse(JSON.stringify())`, Lodash `cloneDeep()`</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+<script>
+	const employee = {name:"kaushal",age:30, address: {city:"Patna"}, phoneNumber: 8088003300};
+	
+	//console.log(`Original :`);
+	//console.log(employee);
+	
+	const deepCopy = JSON.parse(JSON.stringify(employee));
+	
+	//console.log(deepCopy);
+	
+	deepCopy.name = "Shivansh";
+	deepCopy.address.city = "Gaya";
+	
+	
+	console.log(`Original Name : ${employee.name}`);//kaushal
+	console.log(`Original Address : ${employee.address.city}`);//Patna ✅ (not affected)
+	
+	console.log(`Deep Copy Name : ${deepCopy.name}`);//Shivansh
+	console.log(`Deep Copy Address : ${deepCopy.address.city}`);//Gaya
+	
+</script>
+</body>
+</html>
+
+ 

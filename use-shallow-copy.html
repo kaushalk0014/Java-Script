@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Use of Shallow Copy</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+    h2 {
+      color: #2c3e50;
+      margin-top: 30px;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    li::before {
+      content: "👉 ";
+      color: #3498db;
+    }
+    .section {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>🔹Use Shallow Copy</h1>
+
+ <div class="section">
+   🔹 Shallow Copy
+		A shallow copy copies only the first level of an object/array.
+		Nested objects/arrays are still referenced, not cloned.
+		Changing a nested object in the copy will also affect the original.
+		<br>
+		✅ Example:
+  </div>
+
+  <div class="section">
+     
+  </div>
+
+  <div class="section">
+
+  </div>
+
+<script>
+	const employee = {name:"kaushal",age:30, address: {city:"Patna"}, phoneNumber: 8088003300};
+	
+	console.log(`Original :`);
+	console.log(employee);
+	
+	const shallowCopy = {...employee};
+	
+	//console.log(shallowCopy);
+	
+	shallowCopy.name = "Shivansh";
+	shallowCopy.address.city = "Gaya";
+	
+	
+	console.log(`Original Name : ${employee.name}`);
+	console.log(`Original Address : ${employee.address.city}`);
+	
+	console.log(`Shallow Copy Name : ${shallowCopy.name}`);
+	console.log(`Shallow Copy Address : ${shallowCopy.address.city}`);
+	
+</script>
+</body>
+</html>
+
+ 

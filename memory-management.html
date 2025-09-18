@@ -109,7 +109,24 @@
 		// At this point, object {name: "Pankaj"} is reachable via `person`
 		person = null;
 		// Now {name: "Pankaj"} is unreachable → GC will clean it
-
+	
+		// If not cleared, this runs forever and keeps references
+		setInterval(() => console.log("Running..."), 1000);
+		
+		
+		// to clear/stop interval we can use below example
+		
+		let count =1;
+		const interval = setInterval(()=>{
+			console.log("Running....", count);
+			count ++;
+			
+			if(count===5){
+				clearInterval(interval);
+				console.log("Interval stop");
+			}
+		},1000);
+		
 </script>
 </body>
 </html>

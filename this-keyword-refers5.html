@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Use of this keyword</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+    h2 {
+      color: #2c3e50;
+      margin-top: 30px;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    li::before {
+      content: "👉 ";
+      color: #3498db;
+    }
+    .section {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+<h1>Use of this : In a Constructor Function / Class</h1>
+<h1>🔹With call(), apply(), bind()</h1>
+<h1>🔹In Event Listeners</h1>
+
+ <div class="section">
+   
+  </div>
+
+  <div class="section">
+     
+  </div>
+
+  <div class="section">
+	
+	<button>Submit</button>
+ 
+    
+  </div>
+  
+ 
+
+
+<script>
+	 
+	function Person(name){
+		this.name = name;
+	}
+	
+	//use of constractor
+	const p = new Person("Kaushal Kumar");
+	
+	console.log(p.name);
+	
+	console.log("==============================");
+	console.log("Use of call(), apply(), bind()")
+	function greet(){
+	
+		console.log(this.name);
+	}
+	
+	const customer = {"name":"Pankaj Singh", "age": 28};
+	
+	greet.call(customer);
+	greet.apply(customer);
+	
+	const greeting = greet.bind(customer);
+	greeting();
+	
+	console.log("==============================");
+	console.log("In Event Listeners")
+	
+	
+	document.querySelector("button").addEventListener("click", function() {
+	  console.log(this); // the button element
+	});
+
+	document.querySelector("button").addEventListener("click", () => {
+	  console.log(this); // inherits from outer scope (probably window)
+	});
+</script>
+
+	
+</body>
+</html>
+
+ 

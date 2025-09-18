@@ -75,20 +75,16 @@
 <script>
 	
 	 
-	 console.log(`Start`);
-	 
-	 Promise.resolve().then(()=>{
-		console.log("Promise");
-	 });
-	 
-	 setTimeout(()=>{
-		console.log(`Time out`);
-	 },5000);
-	 
-
-	 
-	 console.log("End");
-	 
+ async function demo(){
+	
+	console.log("Demo 1");
+	await Promise.resolve();
+ 
+	console.log("Demo 2");
+ }
+ 
+ demo();
+ console.log("Demo 3");
 </script>
 
 	

@@ -73,22 +73,21 @@
 
 
 <script>
-	
-	 
-	 console.log(`Start`);
-	 
-	 Promise.resolve().then(()=>{
-		console.log("Promise");
-	 });
-	 
-	 setTimeout(()=>{
-		console.log(`Time out`);
-	 },5000);
-	 
 
-	 
-	 console.log("End");
-	 
+	console.log("Start...");
+	
+	function print(){
+		console.log("Timers");
+	}
+	
+	setTimeout(print,5000);
+	
+	console.log("End...");
+	
+	
+	
+	
+ 
 </script>
 
 	

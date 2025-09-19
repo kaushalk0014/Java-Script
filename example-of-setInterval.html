@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>setInterval</title>
+  <style>
+   body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+    h2 {
+      color: #2c3e50;
+      margin-top: 30px;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    li::before {
+      content: "👉 ";
+      color: #3498db;
+    }
+    .section {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<h1>🔹Use of setInterval</h1>
+
+ <div class="section">
+	🔹 2. setInterval<br>
+		Runs a function repeatedly at fixed intervals.<br>
+		Keeps executing until stopped with clearInterval().<br>
+  </div>
+
+	
+<script>
+ 
+	const id = setInterval(()=>{
+		console.log("Running...");
+	},1000);
+	
+	setTimeout(()=>{
+		clearInterval(id);
+		console.log("Stop interval");
+	},5000);
+	
+</script>
+</body>
+</html>
+
+ 

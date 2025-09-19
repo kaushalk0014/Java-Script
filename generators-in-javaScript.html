@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Generators in JavaScript</title>
+  <style>
+   body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+    h2 {
+      color: #2c3e50;
+      margin-top: 30px;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    li::before {
+      content: "👉 ";
+      color: #3498db;
+    }
+    .section {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<h1>🔹Generators in JavaScript</h1>
+
+ <div class="section">
+   What are Generators?
+	A generator is a special type of function in JavaScript that can be paused and resumed.
+	Declared using function* (with an asterisk).
+	Use the yield keyword to “pause” execution and return a value.
+	They return a Generator object which is an iterator (with .next(), .return(), .throw() methods).
+  </div>
+
+	<div class="section">
+		🔹 Example: Infinite Sequence (Practical Use)
+			Generators are great for streams or on-demand sequences.
+	</div>
+	<div class="section">
+	🔹 Real-World Uses
+		Implementing iterators easily (for...of works directly with generators).
+		Managing async flows (before async/await, libraries like co used generators).
+		Handling infinite streams or large datasets lazily.
+		Used in frameworks like Redux-Saga for managing side-effects.
+		✅ Interview Summary:
+		Generators are special functions (function*) that can be paused with yield and resumed with .next(). Unlike regular functions, they return an iterator object and preserve their state across executions.
+	</div>
+	<div class="section">
+	🔹 Key Points
+		yield → produces multiple values one after another (1, 2 here).
+		return → ends the generator immediately, even if more yields are written later.
+		After return, done: true — meaning no more values can come from this generator.
+		💡 Think of it like this:
+		yield = checkpoint (pause & continue later).<br>
+		return = full stop (end of story).
+	</div>
+<script>
+
+	function* generator(){
+		console.log("First Step");
+		yield "Hello";
+		
+		console.log("Second step");
+		yield 2;
+		
+		console.log("Three step");
+		yield 3;
+	}
+	
+	const gen = generator();
+	
+	console.log(gen.next());//value: 'Hello', done: false
+	console.log(gen.next());//value: '2', done: false
+	console.log(gen.next());//value: 'Hello', done: false
+	console.log(gen.next());//value: undefined, done: true
+	//because it over that's bay It is returning true
+	
+	
+	//Generators are great for streams or on-demand sequences.
+	console.log("========== Example 2 ===============");
+	
+	function* idGenerator(){
+		let id =0;
+		
+		while(true){
+			yield id = id+1;
+		}
+	}
+	
+	const idGen = idGenerator();
+	console.log(idGen.next());//1
+	console.log(idGen.next());//2
+	console.log(idGen.next());//3
+	console.log(idGen.next());//4
+	console.log(idGen.next());//5
+	
+	console.log(" ==========Example 3 ============");
+	function* numbers() {
+	  yield 1;  // pause, give back 1
+	  yield 2;  // pause, give back 2
+	  yield 3;  // pause, give back 3
+	}
+		
+	
+	const numGen = numbers();
+
+	console.log(numGen.next()); // { value: 1, done: false }
+	console.log(numGen.next()); // { value: 2, done: false }
+	console.log(numGen.next()); // { value: 3, done: false }
+	console.log(numGen.next()); // { value: undefined, done: true }
+</script>
+</body>
+</html>
+
+ 

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>requestAnimationFrame</title>
+  <style>
+   body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+    h2 {
+      color: #2c3e50;
+      margin-top: 30px;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    li::before {
+      content: "👉 ";
+      color: #3498db;
+    }
+    .section {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+	
+    #box {
+	  position: absolute;
+	  top: 400px;
+	  left: 0px;
+	  width: 50px;
+	  height: 50px;
+	  background-color: blue;
+
+	  /* Rotation animation */
+	  animation: rotateBox 2s linear infinite;
+	}
+
+	/* Keyframes for rotation */
+	@keyframes rotateBox {
+	  from {
+		transform: rotate(0deg);
+	  }
+	  to {
+		transform: rotate(360deg);
+	  }
+	}
+  </style>
+</head>
+<body>
+	<h1>🔹Use of requestAnimationFrame</h1>
+
+	<div class="section">
+	🔹 3. requestAnimationFrame<br>
+		Tells the browser: “Run this callback before the next repaint.<br>
+		Optimized for animations → smoother than setInterval.<br>
+		Runs at the browser’s refresh rate (usually ~60fps, i.e., every 16.7ms).<br>
+		Returns an ID, cancel with cancelAnimationFrame().<br>
+	</div>
+<div id="box"></div>
+
+<script>
+  let pos = 0;
+  let direction = 1; // 1 for right, -1 for left
+
+  function moveBox() {
+    pos = pos + 5 * direction;
+	 
+    document.getElementById("box").style.left = pos + "px";
+
+    // Reverse direction at boundaries
+    if (pos >= 200 || pos <= 0) {
+      direction *= -1;// sum+=1;
+	  
+    }
+
+    requestAnimationFrame(moveBox);
+  }
+
+  requestAnimationFrame(moveBox);
+
+</script>
+
+</body>
+</html>

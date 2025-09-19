@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>setTimeout</title>
+  <style>
+   body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+    h2 {
+      color: #2c3e50;
+      margin-top: 30px;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    li::before {
+      content: "👉 ";
+      color: #3498db;
+    }
+    .section {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<h1>🔹Use of setTimeout</h1>
+
+ <div class="section">
+	1. setTimeout<br>
+		Runs a function once after a specified delay (in ms).<br>
+		Returns a timeout ID which can be cleared with clearTimeout().<br>
+  </div>
+
+	
+<script>
+
+	setTimeout(()=>{
+		  console.log("Welcome after 5 seconds");
+	},5000);
+	//👉 Runs only once after 2s.
+	
+	console.log("===Use of clearTimeout =======");
+	
+	const timer = setTimeout(()=>{
+		console.log("This message will not appear if you cancel the timer.");
+	},5000);
+	
+	function cancelTimer(){
+		clearTimeout(timer);
+		console.log("Cancel Request");
+	}
+	
+	cancelTimer();
+	
+</script>
+</body>
+</html>
+
+ 
